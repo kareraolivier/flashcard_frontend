@@ -1,0 +1,111 @@
+.dashboard{
+    margin: 1rem 3rem;
+   .dashboardbutton{
+    display: flex;
+    justify-content: flex-end;
+   }
+   .category{
+    padding: 1rem 1rem;
+    width: 100%;
+    box-shadow: 0 0 5px rgba(0.1, 0, 0, 0.15);
+    .input{
+        margin-bottom: 1rem;
+        
+        input{
+            width: 20rem;
+            height: 3rem;
+            margin: 2px 2px;
+            border: solid rgb(1, 198, 175);
+            border-radius: 5px;
+            
+        }
+        @media screen and (max-width:450px) {
+            input{width: 15rem;}  
+            
+        }
+    }
+    ul {
+        // margin-top: 2rem;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        margin-block-start: 0;
+        padding-inline-start: 0;
+        list-style: none;
+        li {
+            min-width: 5rem;
+            padding: auto;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: bolder;
+            cursor: pointer;
+            height: 3rem;
+            &:hover {
+              color: rgb(1, 198, 175);
+              font-size: 22px;
+              border-bottom: 2px solid rgb(1, 198, 175);
+            }
+          }
+      }
+   }
+   .dashbordcard{
+    box-shadow: 0 0 5px rgba(0.1, 0, 0, 0.15);
+    margin-top: 2rem;
+    padding: 1rem 1rem ;
+      .inputcard{
+        input{
+            width: 20rem;
+            height: 3rem;
+            margin: 2px 2px;
+            border: solid rgb(1, 198, 175);
+            border-radius: 5px;
+            
+        }
+        @media screen and (max-width:450px) {
+            input{width: 15rem;}  
+            
+        }
+      }
+      .table{
+        margin-top: 2px;
+        #customers {
+            // font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+            th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: left;
+                background-color: rgb(1, 198, 175);
+                color: white;
+                tr{
+                    margin-left: 10px;
+                    th{
+                        padding-top: 12px;
+                        padding-bottom: 12px;
+                        text-align: left;
+                        padding-left: 8px;
+                        background-color: rgb(1, 198, 175);
+                        color: white;
+                    }
+                }
+              }
+
+          }
+          
+          #customers td, #customers th {
+            padding: 8px;
+          }
+          
+          #customers tr:nth-child(even){background-color: #f2f2f2;}
+          
+          #customers tr:hover {background-color: #ddd;}
+          
+        //   #customers 
+      }
+   }
+}
+@media screen and (max-width:450px) {
+    .dashboard{margin: 1rem;}  
+    
+}
