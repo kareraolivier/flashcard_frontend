@@ -1,7 +1,16 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Button from "../Button";
 
-const category = () => {
+const Category = ({ category }) => {
+  const [hasMounted, setHasMounted] = useState(false);
+
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
+
+  if (!hasMounted) {
+    return null;
+  }
   const buttonClick = () => {
     return console.log("clicked");
   };
@@ -22,16 +31,14 @@ const category = () => {
             onClick={buttonClick}
           />
         </div>
-        <ul>
-          <li>Math</li>
-          <li>Math</li>
-          <li>Math</li>
-          <li>Math</li>
-          <li>Math</li>
-        </ul>
+        <div>
+          <ul>
+            <li>{category.name}</li>;
+          </ul>
+        </div>
       </div>
     </div>
   );
 };
 
-export default category;
+export default Category;

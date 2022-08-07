@@ -1,9 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Button from "../Button";
-const card = () => {
+import { BsFillTrashFill } from "react-icons/bs";
+// import Category from "../Category";
+
+const card = ({ category, questionsi, answersi }) => {
   const buttonClick = () => {
     return console.log("clicked");
   };
+  const [hasMounted, setHasMounted] = useState(false);
+
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
+
+  if (!hasMounted) {
+    return null;
+  }
   return (
     <div>
       <div className="dashbordcard">
@@ -35,48 +47,29 @@ const card = () => {
         </div>
         <div className="table">
           <table id="customers">
-            <tr>
-              <th>Category</th>
-              <th>
-                <tr>
-                  <th>Question</th>
-                  <th>Answers</th>
-                </tr>
-              </th>
-            </tr>
+            <thead>
+              <tr>
+                <th>Category</th>
+                <th>Question</th>
+                <th>Answer</th>
+                <th>Action</th>
+              </tr>
+            </thead>
             <tbody>
               <tr>
-                <td>Alfreds Futterkiste</td>
+                <td>{category.name}</td>
+                <td>{questionsi.questions.question}</td>
+                <td>{answersi.questions.answer}</td>
                 <td>
-                  <tr>
-                    <td>Alfreds Futterkiste</td>
-                    <td>Maria Anders</td>
-                  </tr>
-                  <tr>
-                    <td>Alfreds Futterkiste</td>
-                    <td>Maria Anders</td>
-                  </tr>
-                  <tr>
-                    <td>Alfreds Futterkiste</td>
-                    <td>Maria Anders</td>
-                  </tr>
+                  <BsFillTrashFill />
                 </td>
               </tr>
               <tr>
                 <td>Alfreds Futterkiste</td>
+                <td>helo</td>
+                <td>hero</td>
                 <td>
-                  <tr>
-                    <td>Alfreds Futterkiste</td>
-                    <td>Maria Anders</td>
-                  </tr>
-                  <tr>
-                    <td>Alfreds Futterkiste</td>
-                    <td>Maria Anders</td>
-                  </tr>
-                  <tr>
-                    <td>Alfreds Futterkiste</td>
-                    <td>Maria Anders</td>
-                  </tr>
+                  <BsFillTrashFill />
                 </td>
               </tr>
             </tbody>

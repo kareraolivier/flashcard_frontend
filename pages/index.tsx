@@ -22,12 +22,14 @@ const index = () => {
               your learning capability.
             </p>
             <div className="homebutton">
-              <Link href="/cards" style={{ cursor: "pointer" }}>
-                <Button
-                  bcolor="rgb(1, 198, 175)"
-                  text="Get started"
-                  onClick={buttonClick}
-                />
+              <Link href="/cards" style={{ cursor: "pointer" }} passHref>
+                <a>
+                  <Button
+                    bcolor="rgb(1, 198, 175)"
+                    text="Get started"
+                    onClick={buttonClick}
+                  />
+                </a>
               </Link>
             </div>
           </div>
