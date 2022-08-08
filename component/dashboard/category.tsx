@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Button from "../Button";
 
-const Category = ({ category }) => {
+const Category = ({ data }) => {
+  // console.log("karera", category);
   const [hasMounted, setHasMounted] = useState(false);
 
   useEffect(() => {
@@ -33,7 +34,9 @@ const Category = ({ category }) => {
         </div>
         <div>
           <ul>
-            <li>{category.name}</li>;
+            {data.allCategorys.map((category) => (
+              <li key={category.id}>{category.name}</li>
+            ))}
           </ul>
         </div>
       </div>

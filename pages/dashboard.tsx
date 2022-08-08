@@ -6,9 +6,11 @@ import NavBar from "../component/navBar/navBar";
 import Button from "../component/Button";
 import { useQuery } from "@apollo/client";
 import { GET_CATEGORY } from "./api/api";
+import { GET_QUESTION } from "./api/api";
 
 const dashboard = () => {
   const { loading, error, data } = useQuery(GET_CATEGORY);
+  const { data: question } = useQuery(GET_QUESTION);
   if (loading) return <p>loading ..</p>;
   if (error) return <p>error ..</p>;
   console.log("my new data", data);
@@ -33,15 +35,8 @@ const dashboard = () => {
               </a>
             </Link>
           </div>
-          {data.allCategorys.map((newcategory) => {
-            <Category key={newcategory.id} category={newcategory} />;
-            <Card
-              key={newcategory.id}
-              category={newcategory}
-              questionsi={newcategory}
-              answersi={newcategory}
-            />;
-          })}
+          <Category data={data} />
+          <Card data={data} />
         </div>
       )}
     </div>
