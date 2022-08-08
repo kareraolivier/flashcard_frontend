@@ -3,19 +3,21 @@ import Button from "../Button";
 import { BsFillTrashFill } from "react-icons/bs";
 // import Category from "../Category";
 
-const card = ({ category, questionsi, answersi }) => {
+const card = ({ data }) => {
   const buttonClick = () => {
     return console.log("clicked");
   };
-  const [hasMounted, setHasMounted] = useState(false);
+  // const [hasMounted, setHasMounted] = useState(false);
 
-  useEffect(() => {
-    setHasMounted(true);
-  }, []);
+  // useEffect(() => {
+  //   setHasMounted(true);
+  // }, []);
 
-  if (!hasMounted) {
-    return null;
-  }
+  // if (!hasMounted) {
+  //   return null;
+  // }
+  const questions = data.allCategorys.map((data) => data.questions);
+  console.log("questions", questions);
   return (
     <div>
       <div className="dashbordcard">
@@ -56,22 +58,16 @@ const card = ({ category, questionsi, answersi }) => {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>{category.name}</td>
-                <td>{questionsi.questions.question}</td>
-                <td>{answersi.questions.answer}</td>
-                <td>
-                  <BsFillTrashFill />
-                </td>
-              </tr>
-              <tr>
-                <td>Alfreds Futterkiste</td>
-                <td>helo</td>
-                <td>hero</td>
-                <td>
-                  <BsFillTrashFill />
-                </td>
-              </tr>
+              {data.allCategorys.map((card) => (
+                <tr key={card.id}>
+                  <td>{card.name}</td>
+                  <td>{questions.question}</td>
+                  <td>{questions.unswer}</td>
+                  <td>
+                    <BsFillTrashFill />
+                  </td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>
